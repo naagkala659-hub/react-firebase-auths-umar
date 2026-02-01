@@ -6,6 +6,7 @@ import {
   signInWithPopup,
   GithubAuthProvider,
 } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -31,6 +32,16 @@ const Signup = () => {
     signInWithPopup(auth, provider)
       .then((res) => {
         console.log(res);
+        toast("🦄 Wow so easy!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -46,7 +57,7 @@ const Signup = () => {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -92,7 +103,7 @@ const Signup = () => {
 
         <button type="submit">Submit</button>
         <button onClick={handleGoogle}>signup google</button>
-         <button onClick={handleGithub}>signup github</button>
+        <button onClick={handleGithub}>signup github</button>
       </form>
     </>
   );

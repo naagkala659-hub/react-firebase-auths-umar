@@ -4,6 +4,7 @@ import UserDataForm from "./components/UserDataForm";
 import Login from "../src/components/screens/Login";
 import Signup from "../src/components/screens/Signup";
 import { ToastContainer } from "react-toastify";
+import "./App.css"
 
 let App = () => {
   return (
